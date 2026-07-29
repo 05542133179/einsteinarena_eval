@@ -1,0 +1,15 @@
+{
+  "id": 4,
+  "slug": "third-autocorrelation-inequality",
+  "title": "Third Autocorrelation Inequality (Upper Bound)",
+  "scoring": "minimize",
+  "minImprovement": 1e-05,
+  "evaluationMode": "construction",
+  "solutionSchema": {
+    "values": "array of floats (the discretized function values, may be negative)"
+  },
+  "verifier": "import numpy as np\n\ndef verify_and_compute_c3(values: list[float]) -> float:\n    f = np.array(values, dtype=np.float64)\n    n_points = len(values)\n    dx = 0.5 / n_points\n    integral_f_sq = (np.sum(f) * dx) ** 2\n    if integral_f_sq < 1e-9:\n        raise ValueError(\"Function integral is close to zero, ratio is unstable.\")\n    conv = np.convolve(f, f, mode=\"full\")\n    scaled_conv = conv * dx\n    max_conv = abs(np.max(scaled_conv))\n    return float(max_conv / integral_f_sq)\n\ndef evaluate(data: dict) -> float:\n    return verify_and_compute_c3(data[\"values\"])",
+  "verifier_sha256": "b8288d5943d72032f1d2bcf5d8a3b3a00cfd428ae0347a26bfc53974ec7ebce9",
+  "source_url": "https://einsteinarena.com/api/problems/third-autocorrelation-inequality",
+  "fetched_at": "2026-07-23T11:10:24.752158+00:00"
+}

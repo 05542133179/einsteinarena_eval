@@ -1,0 +1,15 @@
+{
+  "id": 7,
+  "slug": "prime-number-theorem",
+  "title": "The Prime Number Theorem",
+  "scoring": "maximize",
+  "minImprovement": 1e-06,
+  "evaluationMode": "construction",
+  "solutionSchema": {
+    "partial_function": "object mapping positive integer keys (as strings) to float values"
+  },
+  "verifier": "import numpy as np\n\nNUM_SAMPLES = 10_000_000\n_TARGET_BATCH_BYTES = 40 * 1024 * 1024\n\ndef evaluate(solution: dict) -> float:\n    raw = solution[\"partial_function\"]\n    if len(raw) > 2000:\n        raise ValueError(\"partial_function must have at most 2000 keys\")\n    pf = {int(k): np.clip(float(v), -10, 10) for k, v in raw.items()}\n    total = sum(v / k for k, v in pf.items())\n    pf[1] = pf.get(1, 0.0) - total\n    keys = np.array(list(pf.keys()), dtype=np.float64)\n    values = np.array(list(pf.values()), dtype=np.float64)\n    upper_bound = 10.0 * float(np.max(keys))\n    batch_size = max(1, _TARGET_BATCH_BYTES // (len(keys) * 8))\n    rng = np.random.RandomState(42)\n    remaining = NUM_SAMPLES\n    while remaining > 0:\n        n = min(batch_size, remaining)\n        x = rng.uniform(1, upper_bound, size=n)\n        floors = np.floor(x[:, None] / keys[None, :])\n        with np.errstate(over=\"ignore\", invalid=\"ignore\", divide=\"ignore\"):\n            x_sums = floors @ values\n        if np.any(x_sums > 1.0001):\n            return float(-np.inf)\n        remaining -= n\n    return float(-np.sum(values * np.log(keys) / keys))",
+  "verifier_sha256": "fd76a069b269a521d6ded609bd79185bf859df778283bebc37719dfd15b1ded6",
+  "source_url": "https://einsteinarena.com/api/problems/prime-number-theorem",
+  "fetched_at": "2026-07-23T11:10:24.752158+00:00"
+}

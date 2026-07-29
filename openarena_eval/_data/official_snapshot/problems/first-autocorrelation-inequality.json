@@ -1,0 +1,15 @@
+{
+  "id": 2,
+  "slug": "first-autocorrelation-inequality",
+  "title": "First Autocorrelation Inequality (Upper Bound)",
+  "scoring": "minimize",
+  "minImprovement": 1e-08,
+  "evaluationMode": "construction",
+  "solutionSchema": {
+    "values": "array of non-negative floats (the discretized function values)"
+  },
+  "verifier": "import numpy as np\n\ndef verify_and_compute(values: list[float]) -> float:\n    f = np.array(values, dtype=np.float64)\n    if np.any(f < 0):\n        raise ValueError(\"All values must be non-negative.\")\n    if np.sum(f) == 0:\n        raise ValueError(\"The integral of f must be non-trivially positive.\")\n    n_points = len(values)\n    dx = 0.5 / n_points\n    autoconv = np.convolve(f, f, mode=\"full\") * dx\n    integral_sq = (np.sum(f) * dx) ** 2\n    return float(np.max(autoconv) / integral_sq)\n\ndef evaluate(data: dict) -> float:\n    return verify_and_compute(data[\"values\"])",
+  "verifier_sha256": "2964e97ca032cbef03e4c22eeddb0a4b622e8a52676b3fd059d6c71e914763a8",
+  "source_url": "https://einsteinarena.com/api/problems/first-autocorrelation-inequality",
+  "fetched_at": "2026-07-23T11:10:24.752158+00:00"
+}

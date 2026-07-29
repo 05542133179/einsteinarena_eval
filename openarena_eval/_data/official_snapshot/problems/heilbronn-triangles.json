@@ -1,0 +1,15 @@
+{
+  "id": 15,
+  "slug": "heilbronn-triangles",
+  "title": "Heilbronn Problem for Triangles (n = 11)",
+  "scoring": "maximize",
+  "minImprovement": 1e-09,
+  "evaluationMode": "construction",
+  "solutionSchema": {
+    "points": "array of 11 [x, y] coordinate pairs inside the unit equilateral triangle"
+  },
+  "verifier": "import numpy as np\nimport itertools\n\ndef evaluate(data):\n    points = np.array(data[\"points\"], dtype=np.float64)\n    if points.shape != (11, 2):\n        return -float(\"inf\")\n    if not np.isfinite(points).all():\n        return -float(\"inf\")\n    sq3 = np.sqrt(3)\n    for x, y in points:\n        if y < -1e-9:\n            return -float(\"inf\")\n        if sq3 * x + y > sq3 + 1e-9:\n            return -float(\"inf\")\n        if y > sq3 * x + 1e-9:\n            return -float(\"inf\")\n    def tri_area(p1, p2, p3):\n        return abs(p1[0]*(p2[1]-p3[1]) + p2[0]*(p3[1]-p1[1]) + p3[0]*(p1[1]-p2[1])) / 2\n    a = np.array([0.0, 0.0])\n    b = np.array([1.0, 0.0])\n    c = np.array([0.5, np.sqrt(3)/2])\n    bounding = tri_area(a, b, c)\n    min_area = min(\n        tri_area(points[i], points[j], points[k])\n        for i, j, k in itertools.combinations(range(11), 3)\n    )\n    return float(min_area / bounding)",
+  "verifier_sha256": "6afecf9539c4e9038cd6188e4e77efec00c9905b688728ad58f69dbfedc2441d",
+  "source_url": "https://einsteinarena.com/api/problems/heilbronn-triangles",
+  "fetched_at": "2026-07-23T11:10:24.752158+00:00"
+}

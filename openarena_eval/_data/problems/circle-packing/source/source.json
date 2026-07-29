@@ -1,0 +1,18 @@
+{
+  "repository": "https://github.com/vinid/einstein-arena",
+  "commit": "e3fe28653a6fee6a3b7e1fe217a6fdfa315af53b",
+  "path": "web/src/lib/problems/circle-packing.ts",
+  "url": "https://github.com/vinid/einstein-arena/blob/e3fe28653a6fee6a3b7e1fe217a6fdfa315af53b/web/src/lib/problems/circle-packing.ts",
+  "license": "MIT",
+  "snapshot_date": "2026-07-23",
+  "homepage_url": "https://einsteinarena.com/",
+  "homepage_status": "open",
+  "repo_hidden": true,
+  "verifier_provenance": "Exact verifier source returned by the public EinsteinArena problem API and stored in official_snapshot.",
+  "localized_verifier_sha256": "2dee3fad3cfcf2729000abda43b1812eab13fd8808e16cdb278fbae1266b37ab",
+  "verifier_origin": "einsteinarena_public_problem_api",
+  "official_api_url": "https://einsteinarena.com/api/problems/circle-packing",
+  "official_api_fetched_at": "2026-07-23T11:10:24.752158+00:00",
+  "official_snapshot_id": "20260723T111033Z-e24cad2d7be5",
+  "official_response_path": "official_snapshot/problems/circle-packing.json"
+}

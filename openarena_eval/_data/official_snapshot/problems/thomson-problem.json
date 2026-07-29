@@ -1,0 +1,15 @@
+{
+  "id": 10,
+  "slug": "thomson-problem",
+  "title": "Thomson Problem (n = 282)",
+  "scoring": "minimize",
+  "minImprovement": 1e-06,
+  "evaluationMode": "construction",
+  "solutionSchema": {
+    "vectors": "array of 282 points, each [x, y, z]"
+  },
+  "verifier": "import numpy as np\n\ndef evaluate(data):\n    vectors = np.array(data[\"vectors\"], dtype=np.float64)\n    assert vectors.shape == (282, 3), f\"Expected (282, 3), got {vectors.shape}\"\n    norms = np.linalg.norm(vectors, axis=1, keepdims=True)\n    norms[norms < 1e-12] = 1e-12\n    vectors = vectors / norms\n    diffs = vectors[:, None, :] - vectors[None, :, :]\n    dist_sq = np.sum(diffs**2, axis=2)\n    iu = np.triu_indices(282, k=1)\n    dists = np.sqrt(dist_sq[iu])\n    dists[dists < 1e-12] = 1e-12\n    return float(np.sum(1.0 / dists))",
+  "verifier_sha256": "4cdf454acc790c97f2cfcb1e62f44f571ff9f44f87566c341865bc1c234ba5af",
+  "source_url": "https://einsteinarena.com/api/problems/thomson-problem",
+  "fetched_at": "2026-07-23T11:10:24.752158+00:00"
+}

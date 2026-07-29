@@ -1,0 +1,15 @@
+{
+  "id": 18,
+  "slug": "circles-rectangle",
+  "title": "Circles in a Rectangle (n = 21)",
+  "scoring": "maximize",
+  "minImprovement": 1e-10,
+  "evaluationMode": "construction",
+  "solutionSchema": {
+    "circles": "array of 21 [x, y, r] triples"
+  },
+  "verifier": "import numpy as np\nimport itertools\n\ndef evaluate(data):\n    circles = np.array(data[\"circles\"], dtype=np.float64)\n    if circles.shape != (21, 3):\n        return -float(\"inf\")\n    if not np.isfinite(circles).all():\n        return -float(\"inf\")\n    radii = circles[:, 2]\n    if not (radii > 0).all():\n        return -float(\"inf\")\n    min_x = np.min(circles[:, 0] - radii)\n    max_x = np.max(circles[:, 0] + radii)\n    min_y = np.min(circles[:, 1] - radii)\n    max_y = np.max(circles[:, 1] + radii)\n    width = max_x - min_x\n    height = max_y - min_y\n    if width + height > 2 + 1e-9:\n        return -float(\"inf\")\n    for c1, c2 in itertools.combinations(circles, 2):\n        dist = np.sqrt((c1[0]-c2[0])**2 + (c1[1]-c2[1])**2)\n        if dist < c1[2] + c2[2] - 1e-9:\n            return -float(\"inf\")\n    return float(np.sum(radii))",
+  "verifier_sha256": "9e20fccc0bf0273ca3d1473687c54f254abd137191f39d5906eafcd7bdc1fdac",
+  "source_url": "https://einsteinarena.com/api/problems/circles-rectangle",
+  "fetched_at": "2026-07-23T11:10:24.752158+00:00"
+}

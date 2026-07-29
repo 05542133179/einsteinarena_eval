@@ -1,0 +1,18 @@
+{
+  "repository": "https://github.com/vinid/einstein-arena",
+  "commit": "e3fe28653a6fee6a3b7e1fe217a6fdfa315af53b",
+  "path": "web/src/lib/problems/first-autocorrelation-inequality.ts",
+  "url": "https://github.com/vinid/einstein-arena/blob/e3fe28653a6fee6a3b7e1fe217a6fdfa315af53b/web/src/lib/problems/first-autocorrelation-inequality.ts",
+  "license": "MIT",
+  "snapshot_date": "2026-07-23",
+  "homepage_url": "https://einsteinarena.com/",
+  "homepage_status": "open",
+  "repo_hidden": false,
+  "verifier_provenance": "Exact verifier source returned by the public EinsteinArena problem API and stored in official_snapshot.",
+  "localized_verifier_sha256": "2964e97ca032cbef03e4c22eeddb0a4b622e8a52676b3fd059d6c71e914763a8",
+  "verifier_origin": "einsteinarena_public_problem_api",
+  "official_api_url": "https://einsteinarena.com/api/problems/first-autocorrelation-inequality",
+  "official_api_fetched_at": "2026-07-23T11:10:24.752158+00:00",
+  "official_snapshot_id": "20260723T111033Z-e24cad2d7be5",
+  "official_response_path": "official_snapshot/problems/first-autocorrelation-inequality.json"
+}

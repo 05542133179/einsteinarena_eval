@@ -1,0 +1,15 @@
+{
+  "id": 3,
+  "slug": "second-autocorrelation-inequality",
+  "title": "Second Autocorrelation Inequality (Lower Bound)",
+  "scoring": "maximize",
+  "minImprovement": 1e-05,
+  "evaluationMode": "construction",
+  "solutionSchema": {
+    "values": "array of non-negative floats (the discretized function values)"
+  },
+  "verifier": "import numpy as np\nfrom scipy.signal import oaconvolve\n\ndef verify_and_compute_c2(values: list[float]) -> float:\n    f = np.array(values, dtype=np.float64)\n    n_points = len(values)\n    if f.shape != (n_points,):\n        raise ValueError(f\"Expected shape ({n_points},), got {f.shape}\")\n    if np.any(f < -1e-6):\n        raise ValueError(\"Function must be non-negative.\")\n    f_nonneg = np.maximum(f, 0.0)\n    if np.sum(f_nonneg) == 0:\n        raise ValueError(\"Function must have positive integral.\")\n    convolution = oaconvolve(f_nonneg, f_nonneg, mode=\"full\")\n    num_conv_points = len(convolution)\n    x_points = np.linspace(-0.5, 0.5, num_conv_points + 2)\n    x_intervals = np.diff(x_points)\n    y_points = np.concatenate(([0], convolution, [0]))\n    y1 = y_points[:-1]\n    y2 = y_points[1:]\n    l2_norm_squared = float(np.sum((x_intervals / 3) * (y1**2 + y1 * y2 + y2**2)))\n    norm_1 = np.sum(np.abs(convolution)) / (num_conv_points + 1)\n    norm_inf = np.max(np.abs(convolution))\n    return float(l2_norm_squared / (norm_1 * norm_inf))\n\ndef evaluate(data: dict) -> float:\n    return verify_and_compute_c2(data[\"values\"])",
+  "verifier_sha256": "dc5ccffaa20ba6c112cab36ffe602c657372d192d8b486abd66b14bcad1ca768",
+  "source_url": "https://einsteinarena.com/api/problems/second-autocorrelation-inequality",
+  "fetched_at": "2026-07-23T11:10:24.752158+00:00"
+}

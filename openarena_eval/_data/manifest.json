@@ -1,0 +1,220 @@
+{
+  "dataset": "openarena",
+  "upstream_name": "EinsteinArena",
+  "snapshot_date": "2026-07-23",
+  "source_repository": "https://github.com/vinid/einstein-arena",
+  "source_commit": "e3fe28653a6fee6a3b7e1fe217a6fdfa315af53b",
+  "source_tree": "https://github.com/vinid/einstein-arena/tree/e3fe28653a6fee6a3b7e1fe217a6fdfa315af53b",
+  "official_verifier_snapshot": {
+    "snapshot_id": "20260723T111033Z-e24cad2d7be5",
+    "base_url": "https://einsteinarena.com",
+    "fetched_at": "2026-07-23T11:10:24.752158+00:00",
+    "problem_count": 17,
+    "manifest_sha256": "9995e10e65fe80944b12d7e69c41d4233ee54d6557a4cf3066fcceae9b40cd03"
+  },
+  "license": "MIT",
+  "selection_rule": "Problems listed under Optimization Problems on the EinsteinArena homepage on the snapshot date.",
+  "problem_count": 17,
+  "open_problem_slugs": [
+    "circle-packing",
+    "circles-rectangle",
+    "difference-bases",
+    "edges-vs-triangles",
+    "erdos-min-overlap",
+    "first-autocorrelation-inequality",
+    "flat-polynomials",
+    "heilbronn-triangles",
+    "kissing-number-d11-605",
+    "kissing-number-d12-842",
+    "min-distance-ratio-2d",
+    "second-autocorrelation-inequality",
+    "tammes-problem",
+    "prime-number-theorem",
+    "third-autocorrelation-inequality",
+    "thomson-problem",
+    "uncertainty-principle"
+  ],
+  "jsonl_sha256": "e7052bb788759cf1ac5db670c10447da63734701db28ff806568f7b5f6c86aaa",
+  "problems": [
+    {
+      "slug": "circle-packing",
+      "title": "Circle Packing in a Square",
+      "status": "active",
+      "homepage_status": "open",
+      "repo_hidden": true,
+      "source_url": "https://github.com/vinid/einstein-arena/blob/e3fe28653a6fee6a3b7e1fe217a6fdfa315af53b/web/src/lib/problems/circle-packing.ts",
+      "verifier_sha256": "2dee3fad3cfcf2729000abda43b1812eab13fd8808e16cdb278fbae1266b37ab",
+      "verifier_origin": "einsteinarena_public_problem_api"
+    },
+    {
+      "slug": "circles-rectangle",
+      "title": "Circles in a Rectangle (n = 21)",
+      "status": "active",
+      "homepage_status": "open",
+      "repo_hidden": false,
+      "source_url": "https://github.com/vinid/einstein-arena/blob/e3fe28653a6fee6a3b7e1fe217a6fdfa315af53b/web/src/lib/problems/circles-rectangle.ts",
+      "verifier_sha256": "9e20fccc0bf0273ca3d1473687c54f254abd137191f39d5906eafcd7bdc1fdac",
+      "verifier_origin": "einsteinarena_public_problem_api"
+    },
+    {
+      "slug": "difference-bases",
+      "title": "Difference Bases",
+      "status": "active",
+      "homepage_status": "open",
+      "repo_hidden": false,
+      "source_url": "https://github.com/vinid/einstein-arena/blob/e3fe28653a6fee6a3b7e1fe217a6fdfa315af53b/web/src/lib/problems/difference-bases.ts",
+      "verifier_sha256": "a7521e8a701ac31131932d2a732769d65426d329f4a933c4819516adacf2e585",
+      "verifier_origin": "einsteinarena_public_problem_api"
+    },
+    {
+      "slug": "edges-vs-triangles",
+      "title": "Edges vs Triangles (Minimal Triangle Density)",
+      "status": "active",
+      "homepage_status": "open",
+      "repo_hidden": true,
+      "source_url": "https://github.com/vinid/einstein-arena/blob/e3fe28653a6fee6a3b7e1fe217a6fdfa315af53b/web/src/lib/problems/edges-vs-triangles.ts",
+      "verifier_sha256": "800ae2fbd2619d50de2177d49609289813bb6a2000b350f63e22820ad667052e",
+      "verifier_origin": "einsteinarena_public_problem_api"
+    },
+    {
+      "slug": "erdos-min-overlap",
+      "title": "Erdős Minimum Overlap (Upper Bound)",
+      "status": "active",
+      "homepage_status": "open",
+      "repo_hidden": false,
+      "source_url": "https://github.com/vinid/einstein-arena/blob/e3fe28653a6fee6a3b7e1fe217a6fdfa315af53b/web/src/lib/problems/erdos-min-overlap.ts",
+      "verifier_sha256": "7c0e78d9dc40f27584ee2de01348fddcc6ff4a540908ddc902a4c6ef920920b0",
+      "verifier_origin": "einsteinarena_public_problem_api"
+    },
+    {
+      "slug": "first-autocorrelation-inequality",
+      "title": "First Autocorrelation Inequality (Upper Bound)",
+      "status": "active",
+      "homepage_status": "open",
+      "repo_hidden": false,
+      "source_url": "https://github.com/vinid/einstein-arena/blob/e3fe28653a6fee6a3b7e1fe217a6fdfa315af53b/web/src/lib/problems/first-autocorrelation-inequality.ts",
+      "verifier_sha256": "2964e97ca032cbef03e4c22eeddb0a4b622e8a52676b3fd059d6c71e914763a8",
+      "verifier_origin": "einsteinarena_public_problem_api"
+    },
+    {
+      "slug": "flat-polynomials",
+      "title": "Flat Polynomials (degree 69)",
+      "status": "active",
+      "homepage_status": "open",
+      "repo_hidden": true,
+      "source_url": "https://github.com/vinid/einstein-arena/blob/e3fe28653a6fee6a3b7e1fe217a6fdfa315af53b/web/src/lib/problems/flat-polynomials.ts",
+      "verifier_sha256": "ff991bd84aec2b5b5d44f58a68dba00f961e01d517ec1de3225e0902f0f2fce2",
+      "verifier_origin": "einsteinarena_public_problem_api"
+    },
+    {
+      "slug": "heilbronn-triangles",
+      "title": "Heilbronn Problem for Triangles (n = 11)",
+      "status": "active",
+      "homepage_status": "open",
+      "repo_hidden": false,
+      "source_url": "https://github.com/vinid/einstein-arena/blob/e3fe28653a6fee6a3b7e1fe217a6fdfa315af53b/web/src/lib/problems/heilbronn-triangles.ts",
+      "verifier_sha256": "6afecf9539c4e9038cd6188e4e77efec00c9905b688728ad58f69dbfedc2441d",
+      "verifier_origin": "einsteinarena_public_problem_api"
+    },
+    {
+      "slug": "kissing-number-d11-605",
+      "title": "Kissing Number in Dimension 11 (n=605)",
+      "status": "active",
+      "homepage_status": "open",
+      "repo_hidden": false,
+      "source_url": "https://github.com/vinid/einstein-arena/blob/e3fe28653a6fee6a3b7e1fe217a6fdfa315af53b/web/src/lib/problems/kissing-number-d11-605.ts",
+      "verifier_sha256": "9bb3804dc09dfaa3400beced301c2fd446123e765053dd0f4b04e5686191d4ef",
+      "verifier_origin": "einsteinarena_public_problem_api"
+    },
+    {
+      "slug": "kissing-number-d12-842",
+      "title": "Kissing Number in Dimension 12 (n=842)",
+      "status": "active",
+      "homepage_status": "open",
+      "repo_hidden": false,
+      "source_url": "https://github.com/vinid/einstein-arena/blob/e3fe28653a6fee6a3b7e1fe217a6fdfa315af53b/web/src/lib/problems/kissing-number-d12-842.ts",
+      "verifier_sha256": "54dc5d8c02a6370dfd24688da5c5745399437e4e5d3b9fdc6c523bb0112f88be",
+      "verifier_origin": "einsteinarena_public_problem_api"
+    },
+    {
+      "slug": "min-distance-ratio-2d",
+      "title": "Minimizing Max/Min Distance Ratio (2D, n=16)",
+      "status": "active",
+      "homepage_status": "open",
+      "repo_hidden": false,
+      "source_url": "https://github.com/vinid/einstein-arena/blob/e3fe28653a6fee6a3b7e1fe217a6fdfa315af53b/web/src/lib/problems/min-distance-ratio-2d.ts",
+      "verifier_sha256": "2971cbb9e16752afe8d1d8067e6358d924b117ebeac0db41434ab19bfc8436ad",
+      "verifier_origin": "einsteinarena_public_problem_api"
+    },
+    {
+      "slug": "second-autocorrelation-inequality",
+      "title": "Second Autocorrelation Inequality (Lower Bound)",
+      "status": "active",
+      "homepage_status": "open",
+      "repo_hidden": false,
+      "source_url": "https://github.com/vinid/einstein-arena/blob/e3fe28653a6fee6a3b7e1fe217a6fdfa315af53b/web/src/lib/problems/second-autocorrelation-inequality.ts",
+      "verifier_sha256": "dc5ccffaa20ba6c112cab36ffe602c657372d192d8b486abd66b14bcad1ca768",
+      "verifier_origin": "einsteinarena_public_problem_api"
+    },
+    {
+      "slug": "tammes-problem",
+      "title": "Tammes Problem (n = 50)",
+      "status": "active",
+      "homepage_status": "open",
+      "repo_hidden": true,
+      "source_url": "https://github.com/vinid/einstein-arena/blob/e3fe28653a6fee6a3b7e1fe217a6fdfa315af53b/web/src/lib/problems/tammes-problem.ts",
+      "verifier_sha256": "b07f1a0bf0e1f31824d15e4179258b3ba5259af43cb22e0bf730bae8675c326c",
+      "verifier_origin": "einsteinarena_public_problem_api"
+    },
+    {
+      "slug": "prime-number-theorem",
+      "title": "The Prime Number Theorem",
+      "status": "active",
+      "homepage_status": "open",
+      "repo_hidden": false,
+      "source_url": "https://github.com/vinid/einstein-arena/blob/e3fe28653a6fee6a3b7e1fe217a6fdfa315af53b/web/src/lib/problems/prime-number-theorem.ts",
+      "verifier_sha256": "fd76a069b269a521d6ded609bd79185bf859df778283bebc37719dfd15b1ded6",
+      "verifier_origin": "einsteinarena_public_problem_api"
+    },
+    {
+      "slug": "third-autocorrelation-inequality",
+      "title": "Third Autocorrelation Inequality (Upper Bound)",
+      "status": "active",
+      "homepage_status": "open",
+      "repo_hidden": false,
+      "source_url": "https://github.com/vinid/einstein-arena/blob/e3fe28653a6fee6a3b7e1fe217a6fdfa315af53b/web/src/lib/problems/third-autocorrelation-inequality.ts",
+      "verifier_sha256": "b8288d5943d72032f1d2bcf5d8a3b3a00cfd428ae0347a26bfc53974ec7ebce9",
+      "verifier_origin": "einsteinarena_public_problem_api"
+    },
+    {
+      "slug": "thomson-problem",
+      "title": "Thomson Problem (n = 282)",
+      "status": "active",
+      "homepage_status": "open",
+      "repo_hidden": true,
+      "source_url": "https://github.com/vinid/einstein-arena/blob/e3fe28653a6fee6a3b7e1fe217a6fdfa315af53b/web/src/lib/problems/thomson-problem.ts",
+      "verifier_sha256": "4cdf454acc790c97f2cfcb1e62f44f571ff9f44f87566c341865bc1c234ba5af",
+      "verifier_origin": "einsteinarena_public_problem_api"
+    },
+    {
+      "slug": "uncertainty-principle",
+      "title": "Uncertainty Principle (Upper Bound)",
+      "status": "active",
+      "homepage_status": "open",
+      "repo_hidden": false,
+      "source_url": "https://github.com/vinid/einstein-arena/blob/e3fe28653a6fee6a3b7e1fe217a6fdfa315af53b/web/src/lib/problems/uncertainty-principle.ts",
+      "verifier_sha256": "8986d94fac865d4aea224c995b408574b9ac0f1c5d0a15dbd810ebc958457289",
+      "verifier_origin": "einsteinarena_public_problem_api"
+    }
+  ],
+  "excluded_problem_definitions": [
+    "erdos-142",
+    "heilbronn-convex",
+    "hexagon-packing",
+    "kissing-number-d11",
+    "kissing-number-d12",
+    "kissing-number-d16",
+    "lean-sum-test",
+    "sum-difference-2"
+  ]
+}

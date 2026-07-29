@@ -1,0 +1,15 @@
+{
+  "id": 25,
+  "slug": "kissing-number-d12-842",
+  "title": "Kissing Number in Dimension 12 (n=842)",
+  "scoring": "minimize",
+  "minImprovement": 0.0,
+  "evaluationMode": "construction",
+  "solutionSchema": {
+    "vectors": "array of 842 vectors in R^12 (each a list of 12 numbers)"
+  },
+  "verifier": "import itertools\nfrom decimal import Decimal, getcontext\n\ngetcontext().prec = 30\n\nZERO = Decimal(0)\nTWO = Decimal(2)\nFOUR = Decimal(4)\n\n\ndef _to_dec(x):\n    return Decimal(str(x))\n\n\ndef _exact_check(vectors):\n    dec_vecs = [[_to_dec(x) for x in vec] for vec in vectors]\n\n    squared_norms = [sum(x * x for x in vec) for vec in dec_vecs]\n    if min(squared_norms) == ZERO:\n        return False\n    max_sq_norm = max(squared_norms)\n\n    min_sq_dist = None\n    for p, q in itertools.combinations(dec_vecs, 2):\n        sq_dist = sum((a - b) ** 2 for a, b in zip(p, q))\n        if min_sq_dist is None or sq_dist < min_sq_dist:\n            min_sq_dist = sq_dist\n\n    return min_sq_dist >= max_sq_norm\n\n\ndef _overlap_loss(vectors):\n    d = len(vectors[0])\n    scaled = []\n    for vec in vectors:\n        norm_sq = sum((_to_dec(x) ** 2 for x in vec), ZERO)\n        if norm_sq == ZERO:\n            raise ValueError(\"All vectors must be non-zero\")\n        norm = norm_sq.sqrt()\n        scaled.append([(_to_dec(x) * TWO) / norm for x in vec])\n\n    n = len(scaled)\n    total = ZERO\n    for i in range(n):\n        for j in range(i + 1, n):\n            sq = sum(((scaled[i][k] - scaled[j][k]) ** 2 for k in range(d)), ZERO)\n            if sq < FOUR:\n                total += (TWO - sq.sqrt())\n    return float(total)\n\n\ndef evaluate(data: dict) -> float:\n    vectors = data[\"vectors\"]\n    n, d = 842, 12\n\n    if len(vectors) != n:\n        raise ValueError(f\"Expected {n} vectors, got {len(vectors)}\")\n    for v in vectors:\n        if len(v) != d:\n            raise ValueError(f\"Each vector must have {d} components, got {len(v)}\")\n\n    if _exact_check(vectors):\n        return 0.0\n    return _overlap_loss(vectors)",
+  "verifier_sha256": "54dc5d8c02a6370dfd24688da5c5745399437e4e5d3b9fdc6c523bb0112f88be",
+  "source_url": "https://einsteinarena.com/api/problems/kissing-number-d12-842",
+  "fetched_at": "2026-07-23T11:10:24.752158+00:00"
+}

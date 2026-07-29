@@ -1,0 +1,15 @@
+{
+  "id": 12,
+  "slug": "flat-polynomials",
+  "title": "Flat Polynomials (degree 69)",
+  "scoring": "minimize",
+  "minImprovement": 1e-06,
+  "evaluationMode": "construction",
+  "solutionSchema": {
+    "coefficients": "array of 70 values, each +1 or -1"
+  },
+  "verifier": "import numpy as np\n\ndef evaluate(data):\n    coefficients = np.array(data[\"coefficients\"], dtype=np.float64)\n    assert len(coefficients) == 70, f\"Expected 70 coefficients, got {len(coefficients)}\"\n    assert all(c in (-1, 1) for c in coefficients), \"All coefficients must be +1 or -1\"\n    poly_fn = np.poly1d(coefficients)\n    num_points = 1_000_000\n    zs = np.exp(1j * np.linspace(0, 2 * np.pi, num_points))\n    vals = np.abs(poly_fn(zs))\n    return float(np.max(vals) / np.sqrt(len(coefficients) + 1))",
+  "verifier_sha256": "ff991bd84aec2b5b5d44f58a68dba00f961e01d517ec1de3225e0902f0f2fce2",
+  "source_url": "https://einsteinarena.com/api/problems/flat-polynomials",
+  "fetched_at": "2026-07-23T11:10:24.752158+00:00"
+}
