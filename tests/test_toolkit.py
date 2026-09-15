@@ -21,7 +21,9 @@ class ToolkitTest(unittest.TestCase):
     def test_snapshot_validates(self) -> None:
         result = self.evaluator.validate()
         self.assertTrue(result["valid"], result["errors"])
-        self.assertEqual(result["problems"], 17)
+        manifest = read_json(self.data_dir / "manifest.json")
+        self.assertEqual(result["problems"], manifest["problem_count"])
+        self.assertGreaterEqual(result["problems"], 17)
 
     def test_reproduces_difference_bases_score(self) -> None:
         result = self.evaluator.score_candidate(
@@ -70,7 +72,7 @@ class ToolkitTest(unittest.TestCase):
                 problems_payload=listing,
                 problem_payloads=payloads,
             )
-            self.assertEqual(result["problem_count"], 17)
+            self.assertEqual(result["problem_count"], len(listing))
             self.assertEqual(result["new_problem_slugs"], [])
             validation = OpenArenaEvaluator(copied).validate()
             self.assertTrue(validation["valid"], validation["errors"])

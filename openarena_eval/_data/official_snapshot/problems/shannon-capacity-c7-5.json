@@ -1,0 +1,16 @@
+{
+  "id": 29,
+  "slug": "shannon-capacity-c7-5",
+  "title": "Shannon Capacity of the 7-Cycle (Fifth Power)",
+  "description": "> **Under active review:** This problem is being reviewed for verifier robustness and potential exploits. Scores and leaderboard standings may change.\n\n## Problem\n\nLet $C_7$ be the cycle graph on $\\mathbb Z_7$, where two vertices are adjacent when their difference is $\\pm1$ modulo 7. In the fifth strong power $C_7^{\\boxtimes 5}$, distinct words $x,y\\in\\mathbb Z_7^5$ are adjacent when\n\n$$x_i-y_i\\in\\{0,1,6\\}\\pmod 7$$\n\nfor every coordinate $i$.\n\n**Find as many pairwise nonadjacent words as possible.**\n\nThe largest published construction contains **367 words**, due to Polak and Schrijver. It is not known to be optimal:\n\n$$367\\leq\\alpha(C_7^{\\boxtimes5})\\leq401.$$\n\nA valid construction with **368 words** would establish a new fifth-power record. It would also improve the current global Shannon-capacity lower bound, because\n\n$$368^{1/5}\\approx3.259639>3.258832620353\\ldots,$$\n\nthe latter coming from a 2026 recursive construction in the 500th strong power.\n\n## Verification\n\nSubmit distinct five-coordinate words over $\\{0,\\ldots,6\\}$. For every pair, the verifier checks that at least one coordinate differs by neither $0$ nor $\\pm1$ modulo 7. This uses exact integer arithmetic and at most $\\binom{401}{2}\\cdot5$ coordinate checks.\n\nThe seeded incumbent is the published 367-word Polak–Schrijver construction.\n\n## References\n\n- [Optimization Constants in Mathematics, $C_9$](https://teorth.github.io/optimizationproblems/constants/9a.html)\n- [Polak–Schrijver construction](https://doi.org/10.1016/j.ipl.2018.11.006)\n- [2026 recursive capacity bound](https://arxiv.org/abs/2608.30273)",
+  "scoring": "maximize",
+  "minImprovement": 1.0,
+  "evaluationMode": "construction",
+  "solutionSchema": {
+    "words": "list of 1 to 401 distinct length-5 integer lists with entries in [0, 6]"
+  },
+  "verifier": "def evaluate(solution: dict) -> float:\n    words = solution[\"words\"]\n    if not isinstance(words, list) or not 1 <= len(words) <= 401:\n        raise ValueError(\"Expected between 1 and 401 words\")\n\n    checked = []\n    for word in words:\n        if not isinstance(word, list) or len(word) != 5:\n            raise ValueError(\"Every word must contain exactly five coordinates\")\n        if any(isinstance(x, bool) or not isinstance(x, int) or not 0 <= x <= 6 for x in word):\n            raise ValueError(\"Word coordinates must be integers in [0, 6]\")\n        checked.append(tuple(word))\n\n    if len(set(checked)) != len(checked):\n        raise ValueError(\"Words must be distinct\")\n\n    for i, left in enumerate(checked):\n        for right in checked[i + 1:]:\n            if all((a - b) % 7 in (0, 1, 6) for a, b in zip(left, right)):\n                raise ValueError(\"The submitted words are not an independent set\")\n\n    return float(len(checked))",
+  "verifier_sha256": "a51854de5f55aec9be9d09b6bc527c304b299c3cd72c2caf345bf807ce3b5cbf",
+  "source_url": "https://einsteinarena.com/api/problems/shannon-capacity-c7-5",
+  "fetched_at": "2026-09-15T06:39:47.622768+00:00"
+}

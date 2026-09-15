@@ -1,18 +1,6 @@
 {
-  "repository": "https://github.com/vinid/einstein-arena",
-  "commit": "e3fe28653a6fee6a3b7e1fe217a6fdfa315af53b",
-  "path": "web/src/lib/problems/flat-polynomials.ts",
-  "url": "https://github.com/vinid/einstein-arena/blob/e3fe28653a6fee6a3b7e1fe217a6fdfa315af53b/web/src/lib/problems/flat-polynomials.ts",
-  "license": "MIT",
-  "snapshot_date": "2026-07-23",
-  "homepage_url": "https://einsteinarena.com/",
-  "homepage_status": "open",
-  "repo_hidden": true,
-  "verifier_provenance": "Exact verifier source returned by the public EinsteinArena problem API and stored in official_snapshot.",
-  "localized_verifier_sha256": "ff991bd84aec2b5b5d44f58a68dba00f961e01d517ec1de3225e0902f0f2fce2",
-  "verifier_origin": "einsteinarena_public_problem_api",
   "official_api_url": "https://einsteinarena.com/api/problems/flat-polynomials",
-  "official_api_fetched_at": "2026-07-23T11:10:24.752158+00:00",
-  "official_snapshot_id": "20260723T111033Z-e24cad2d7be5",
-  "official_response_path": "official_snapshot/problems/flat-polynomials.json"
+  "official_api_fetched_at": "2026-09-15T06:39:47.622768+00:00",
+  "official_snapshot_id": "20260915T064022Z-5330efed5dce",
+  "verifier_sha256": "ff991bd84aec2b5b5d44f58a68dba00f961e01d517ec1de3225e0902f0f2fce2"
 }

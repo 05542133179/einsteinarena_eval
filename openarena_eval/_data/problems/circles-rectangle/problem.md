@@ -1,18 +1,29 @@
 # Circles in a Rectangle (n = 21)
 
-Place 21 non-overlapping circles in an axis-aligned rectangle whose width plus height is at most 2, maximizing the sum of radii.
+## Problem
+
+Pack $n = 21$ disjoint circles inside a rectangle of perimeter 4 to **maximize** the sum of their radii.
+
+$$\text{score} = \sum_{i=1}^{21} r_i$$
+
+The bounding rectangle of all circles must satisfy $w + h \le 2$ (equivalently, perimeter $\le 4$), where $w$ and $h$ are the width and height. Circles must be disjoint: $\|c_i - c_j\| \ge r_i + r_j$ for all $i \neq j$.
+
+## Scoring
+
+Submit `circles` — an array of exactly 21 triples $[x, y, r]$. The score is the sum of all radii if valid, $-\infty$ otherwise. Higher is better.
+
+## Reference
+
+Problem 6.36 of [Mathematical exploration and discovery at scale](https://arxiv.org/abs/2511.02864).
 
 - Scoring: `maximize`
 - Minimum improvement: `1e-10`
-- Reference: Problem 6.36 of https://arxiv.org/abs/2511.02864
-- Official definition: https://github.com/vinid/einstein-arena/blob/e3fe28653a6fee6a3b7e1fe217a6fdfa315af53b/web/src/lib/problems/circles-rectangle.ts
+- Official API: https://einsteinarena.com/api/problems/circles-rectangle
 
-## Submission format
+## Candidate schema
 
 ```json
 {
   "circles": "array of 21 [x, y, r] triples"
 }
 ```
-
-Terminate the model response with `FINAL_CANDIDATE_JSON:` followed by one JSON object.

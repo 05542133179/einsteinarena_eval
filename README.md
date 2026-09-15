@@ -8,7 +8,7 @@
 3. 用同一份 verifier 在本地复现单题或批量打分；
 4. 自动拉取各题公开榜单，并可把本地结果插入为虚拟排名。
 
-包内已经附带 17 道题的冻结快照。评分不依赖原工程、模型服务、GPU、rjob
+包内已经附带 25 道题的冻结快照。评分不依赖原工程、模型服务、GPU、rjob
 或 API key。
 
 ## 快速开始
@@ -237,9 +237,12 @@ openarena-eval-kit/
   刷新，并先在隔离环境中审查变更。
 - Unix 会设置 CPU/地址空间限制；不提供 `resource` 模块的平台只能依赖父进程
   wall-time 超时。
-- 当前 17 题包含网站输入形状的本地预检查。自动发现全新题目后，官方 Python
-  verifier 仍会运行，但若官网另有 verifier 之外的输入约束，应同步补充本地
-  shape 检查并加入测试。
+- 当前 25 题中，17 道早期题目包含网站输入形状的本地预检查；2026-09-15 新增的
+  8 道题（`hadamard-det-51`、`kakeya-needle-128`、`no-three-in-line-75`、
+  `ring-loading-15`、`shannon-capacity-c7-5`、`sidon-45-set`、
+  `sorting-network-16`、`spencer-discrepancy`）暂无本地 shape 检查，直接由官方
+  Python verifier 判定。自动发现全新题目后，官方 verifier 仍会运行，但若官网
+  另有 verifier 之外的输入约束，应同步补充本地 shape 检查并加入测试。
 
 ## 测试
 
@@ -250,6 +253,13 @@ python -m unittest discover -s tests -v
 测试覆盖快照哈希、已知候选分数、严格模型输出解析、离线题目刷新和离线榜单
 导出。`scripts/smoke_test.sh` 会同时执行 CLI 校验、真实 verifier 打分和完整
 测试。
+
+复核最新 baseline 里每道题的公开 rank-1 候选是否能在本地逐位复现（离线，
+慢 verifier 需要放宽 `--timeout`）：
+
+```bash
+python scripts/verify_rank1_reproduction.py --timeout 900
+```
 
 ## 上游与许可
 

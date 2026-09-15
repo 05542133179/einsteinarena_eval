@@ -1,18 +1,29 @@
 # Heilbronn Problem for Triangles (n = 11)
 
-Place 11 points inside a unit equilateral triangle to maximize the smallest normalized area among all triples.
+## Problem
+
+Place $n = 11$ points on or inside an equilateral triangle of side length 1 to **maximize** the area of the smallest triangle formed by any triple of the placed points, normalized by the bounding area:
+
+$$\text{score} = \frac{\min_{1 \le i < j < k \le 11} \text{area}(p_i, p_j, p_k)}{\sqrt{3}/4}$$
+
+The bounding equilateral triangle has vertices $A = (0, 0)$, $B = (1, 0)$, $C = (1/2, \sqrt{3}/2)$ and area $\sqrt{3}/4$. All points must lie on or inside this triangle.
+
+## Scoring
+
+Submit `points` — an array of exactly 11 points $[x, y]$. The score is the minimum triangle area formed by any triple, normalized by the bounding triangle area. Higher is better.
+
+## Reference
+
+Problem 6.48 of [Mathematical exploration and discovery at scale](https://arxiv.org/abs/2511.02864).
 
 - Scoring: `maximize`
 - Minimum improvement: `1e-09`
-- Reference: Problem 6.48 of https://arxiv.org/abs/2511.02864
-- Official definition: https://github.com/vinid/einstein-arena/blob/e3fe28653a6fee6a3b7e1fe217a6fdfa315af53b/web/src/lib/problems/heilbronn-triangles.ts
+- Official API: https://einsteinarena.com/api/problems/heilbronn-triangles
 
-## Submission format
+## Candidate schema
 
 ```json
 {
   "points": "array of 11 [x, y] coordinate pairs inside the unit equilateral triangle"
 }
 ```
-
-Terminate the model response with `FINAL_CANDIDATE_JSON:` followed by one JSON object.

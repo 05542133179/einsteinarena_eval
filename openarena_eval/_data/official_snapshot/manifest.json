@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "snapshot_id": "20260723T111033Z-e24cad2d7be5",
+  "snapshot_id": "20260915T064022Z-5330efed5dce",
   "source": "einsteinarena_public_problem_api",
   "base_url": "https://einsteinarena.com",
-  "fetched_at": "2026-07-23T11:10:24.752158+00:00",
-  "problem_count": 17,
+  "fetched_at": "2026-09-15T06:39:47.622768+00:00",
+  "problem_count": 25,
   "problem_slugs": [
     "circle-packing",
     "circles-rectangle",
@@ -22,17 +22,53 @@
     "prime-number-theorem",
     "third-autocorrelation-inequality",
     "thomson-problem",
-    "uncertainty-principle"
+    "uncertainty-principle",
+    "hadamard-det-51",
+    "kakeya-needle-128",
+    "no-three-in-line-75",
+    "ring-loading-15",
+    "shannon-capacity-c7-5",
+    "sidon-45-set",
+    "sorting-network-16",
+    "spencer-discrepancy"
+  ],
+  "excluded_problem_slugs": [
+    "erdos-142",
+    "heilbronn-convex",
+    "hexagon-packing",
+    "kissing-number-d11",
+    "kissing-number-d12",
+    "kissing-number-d16",
+    "lean-sum-test",
+    "sum-difference-2"
+  ],
+  "listing_url": "https://einsteinarena.com/api/problems",
+  "new_problem_slugs": [
+    "hadamard-det-51",
+    "kakeya-needle-128",
+    "no-three-in-line-75",
+    "ring-loading-15",
+    "shannon-capacity-c7-5",
+    "sidon-45-set",
+    "sorting-network-16",
+    "spencer-discrepancy"
+  ],
+  "removed_problem_slugs": [],
+  "changed_verifier_slugs": [
+    "circle-packing",
+    "circles-rectangle",
+    "edges-vs-triangles",
+    "heilbronn-triangles"
   ],
   "verifier_hashes": {
-    "circle-packing": "2dee3fad3cfcf2729000abda43b1812eab13fd8808e16cdb278fbae1266b37ab",
-    "circles-rectangle": "9e20fccc0bf0273ca3d1473687c54f254abd137191f39d5906eafcd7bdc1fdac",
+    "circle-packing": "0fc4d3aa9b1018d69aad40fd8f50e4201b8e7ad2ca52e9a68fb739626391fa0e",
+    "circles-rectangle": "77cf0c63c000f1abc2d89aae18d4d7407599b8f683f304fe6cf9adeba966482d",
     "difference-bases": "a7521e8a701ac31131932d2a732769d65426d329f4a933c4819516adacf2e585",
-    "edges-vs-triangles": "800ae2fbd2619d50de2177d49609289813bb6a2000b350f63e22820ad667052e",
+    "edges-vs-triangles": "e504fc4b38a0b7fe3b27b5b5c7a5faceca36107a4d913283f61a644296cef2b4",
     "erdos-min-overlap": "7c0e78d9dc40f27584ee2de01348fddcc6ff4a540908ddc902a4c6ef920920b0",
     "first-autocorrelation-inequality": "2964e97ca032cbef03e4c22eeddb0a4b622e8a52676b3fd059d6c71e914763a8",
     "flat-polynomials": "ff991bd84aec2b5b5d44f58a68dba00f961e01d517ec1de3225e0902f0f2fce2",
-    "heilbronn-triangles": "6afecf9539c4e9038cd6188e4e77efec00c9905b688728ad58f69dbfedc2441d",
+    "heilbronn-triangles": "1712f7838b13124429d55595e48e070ad953c0e07a75f988b6af6ceeb080f074",
     "kissing-number-d11-605": "9bb3804dc09dfaa3400beced301c2fd446123e765053dd0f4b04e5686191d4ef",
     "kissing-number-d12-842": "54dc5d8c02a6370dfd24688da5c5745399437e4e5d3b9fdc6c523bb0112f88be",
     "min-distance-ratio-2d": "2971cbb9e16752afe8d1d8067e6358d924b117ebeac0db41434ab19bfc8436ad",
@@ -41,7 +77,15 @@
     "prime-number-theorem": "fd76a069b269a521d6ded609bd79185bf859df778283bebc37719dfd15b1ded6",
     "third-autocorrelation-inequality": "b8288d5943d72032f1d2bcf5d8a3b3a00cfd428ae0347a26bfc53974ec7ebce9",
     "thomson-problem": "4cdf454acc790c97f2cfcb1e62f44f571ff9f44f87566c341865bc1c234ba5af",
-    "uncertainty-principle": "8986d94fac865d4aea224c995b408574b9ac0f1c5d0a15dbd810ebc958457289"
+    "uncertainty-principle": "8986d94fac865d4aea224c995b408574b9ac0f1c5d0a15dbd810ebc958457289",
+    "hadamard-det-51": "39ab063431d610ab8e3135061b7339f2d6500dfa4971a45b6515fc9a0eb17eb2",
+    "kakeya-needle-128": "4d7e8ddd5a5044b3f0e66f745486538f5b76ddb6687e5fb536aca18b5c6cd098",
+    "no-three-in-line-75": "9e016d7f19c40247ea1e5933aa7afb7ede60fd3acbb12629fe876a0c60178f5a",
+    "ring-loading-15": "a91b09ba472d9506a1d54603f977872f37505bdcc0e258b5dddd1ed99f148a57",
+    "shannon-capacity-c7-5": "a51854de5f55aec9be9d09b6bc527c304b299c3cd72c2caf345bf807ce3b5cbf",
+    "sidon-45-set": "bb50c84959e795bfbd94547aa51fcf761062c9c8eb426d32e843770b82cc424c",
+    "sorting-network-16": "3e0f196983c07957fd2e0cb001300ff0b3a7bc793f29870dc7c26085e4f0f277",
+    "spencer-discrepancy": "c14bb8b473cbed94f5605996a0082a1b998d398210d028e7fc4c1234f71db883"
   },
-  "aggregate_sha256": "e24cad2d7be58bcdcca14b441208ab37244f5e7f6fbd1225401f9bb001d499cd"
+  "aggregate_sha256": "5330efed5dce8dfa381cb1ec800ec6f05bf0f505dec9f7de8f200df8114ab4d9"
 }

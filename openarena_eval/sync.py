@@ -22,6 +22,21 @@ from .common import (
 
 DEFAULT_BASE_URL = "https://einsteinarena.com"
 FINAL_MARKER = "FINAL_CANDIDATE_JSON:"
+
+
+class _RedirectHandler(urllib.request.HTTPRedirectHandler):
+    """Follow HTTP 308 the same way as the other permanent redirects.
+
+    Python 3.10's stock redirect handler implements 301/302/303/307 only.
+    The official problem endpoint answers with a 308, so without this the
+    refresh aborts with ``HTTP Error 308: Permanent Redirect``.
+    """
+
+    def http_error_308(self, req, fp, code, msg, headers):  # type: ignore[override]
+        return self.http_error_301(req, fp, code, msg, headers)
+
+
+_OPENER = urllib.request.build_opener(_RedirectHandler)
 DEFAULT_EXCLUSIONS = {
     "erdos-142",
     "heilbronn-convex",
@@ -45,7 +60,7 @@ def request_json(url: str, *, timeout: float, retries: int) -> Any:
     last_error: BaseException | None = None
     for attempt in range(retries + 1):
         try:
-            with urllib.request.urlopen(request, timeout=timeout) as response:
+            with _OPENER.open(request, timeout=timeout) as response:
                 return json.load(response)
         except (
             OSError,

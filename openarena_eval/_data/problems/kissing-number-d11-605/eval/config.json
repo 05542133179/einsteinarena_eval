@@ -2,9 +2,8 @@
   "adapter": "openarena",
   "scoring": "minimize",
   "min_improvement": 0.0,
-  "baseline_score": null,
   "timeout_seconds": 120,
   "memory_gb": 8,
   "required_final_marker": "FINAL_CANDIDATE_JSON:",
-  "verifier_origin": "einsteinarena_public_problem_api"
+  "verifier_sha256": "9bb3804dc09dfaa3400beced301c2fd446123e765053dd0f4b04e5686191d4ef"
 }

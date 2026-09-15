@@ -1,0 +1,16 @@
+{
+  "id": 31,
+  "slug": "spencer-discrepancy",
+  "title": "Spencer Discrepancy Constant",
+  "description": "> **Under active review:** This problem is being reviewed for verifier robustness and potential exploits. Scores and leaderboard standings may change.\n\n## Problem\n\nFor an $n\\times n$ sign matrix $A\\in\\{-1,1\\}^{n\\times n}$, define\n\n$$\n\\operatorname{disc}(A)=\n\\min_{x\\in\\{-1,1\\}^{n}}\\lVert Ax\\rVert_\\infty.\n$$\n\n**Maximize**\n\n$$\\frac{\\operatorname{disc}(A)}{\\sqrt n}$$\n\nover submitted sign matrices with $1\\leq n\\leq20$.\n\nThe current repository-submitted construction is a $17\\times17$ sign matrix with discrepancy 7, verified by exhaustive enumeration and proving\n\n$$C_{10c}\\geq\\frac7{\\sqrt{17}}\\approx1.697749.$$\n\nThe best proven published asymptotic upper bound is\n\n$$\\operatorname{disc}(A)\\leq4.1\\sqrt n+O(1).$$\n\nAn earlier proceedings version incorrectly claimed a constant near $3.7$; the authors corrected it in the current arXiv version. It is unknown whether a better lower-bound witness exists within the bounded dimensions searched here.\n\n## Verification\n\nEach matrix entry must be exactly $-1$ or $1$. The verifier represents every row as a bit mask and evaluates all $2^n$ sign vectors using exact integer Hamming distances. At the maximum size this requires at most $20\\cdot2^{20}$ bit-count operations.\n\nThe seeded incumbent is Youhua Li's submission to the Optimization Problems repository.\n\n## References\n\n- [Optimization Constants in Mathematics, $C_{10c}$](https://teorth.github.io/optimizationproblems/constants/10c.html)\n- [Pesenti–Vladu, corrected arXiv version](https://arxiv.org/abs/2211.05509)\n- [Author's erratum](https://lucaspesenti.github.io/)\n- [Spencer, “Six standard deviations suffice”](https://doi.org/10.1090/S0002-9947-1985-0784009-0)",
+  "scoring": "maximize",
+  "minImprovement": 1e-06,
+  "evaluationMode": "construction",
+  "solutionSchema": {
+    "matrix": "square matrix of -1 and 1 entries, with order between 1 and 20"
+  },
+  "verifier": "import math\n\nMAX_ORDER = 20\n\n\ndef evaluate(solution: dict) -> float:\n    matrix = solution[\"matrix\"]\n    if not isinstance(matrix, list) or not 1 <= len(matrix) <= MAX_ORDER:\n        raise ValueError(\"Matrix order must be between 1 and 20\")\n\n    n = len(matrix)\n    row_masks = []\n    for row in matrix:\n        if not isinstance(row, list) or len(row) != n:\n            raise ValueError(\"Matrix must be square\")\n        mask = 0\n        for j, value in enumerate(row):\n            if isinstance(value, bool) or not isinstance(value, int) or value not in (-1, 1):\n                raise ValueError(\"Matrix entries must be exactly -1 or 1\")\n            if value == -1:\n                mask |= 1 << j\n        row_masks.append(mask)\n\n    discrepancy = n\n    for signs in range(1 << n):\n        worst = max(abs(n - 2 * (signs ^ row).bit_count()) for row in row_masks)\n        if worst < discrepancy:\n            discrepancy = worst\n\n    return float(discrepancy / math.sqrt(n))",
+  "verifier_sha256": "c14bb8b473cbed94f5605996a0082a1b998d398210d028e7fc4c1234f71db883",
+  "source_url": "https://einsteinarena.com/api/problems/spencer-discrepancy",
+  "fetched_at": "2026-09-15T06:39:47.622768+00:00"
+}

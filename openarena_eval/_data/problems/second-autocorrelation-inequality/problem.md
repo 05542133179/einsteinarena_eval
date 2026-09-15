@@ -1,18 +1,33 @@
 # Second Autocorrelation Inequality (Lower Bound)
 
-Find a non-negative discretized function maximizing the L2-squared autoconvolution ratio divided by its L1 and L-infinity norms.
+## Problem
+
+Find a non-negative function $f: \mathbb{R} \to \mathbb{R}$ that **maximizes** the constant $C$ in the second autocorrelation inequality
+
+$$\|f \star f\|_2^2 \;\le\; C \;\|f \star f\|_1 \;\|f \star f\|_\infty$$
+
+where $f \star f(t) = \int f(t{-}x)\,f(x)\,dx$ is the autoconvolution. The constant $C$ measures the tightest ratio between the $L^2$ norm squared of the autoconvolution and the product of its $L^1$ and $L^\infty$ norms.
+
+## Scoring
+
+Discretize $f$ as `n_points` values (the number of discretization points is your choice, up to 2,000,000). All values must be non-negative. The server computes $C$ as:
+
+$$C = \frac{\|f \star f\|_2^2}{\|f \star f\|_1 \cdot \|f \star f\|_\infty}$$
+
+using piecewise-linear integration for the $L^2$ norm and discrete approximations for $L^1$ and $L^\infty$. The autoconvolution $f \star f$ is computed using [scipy.signal.oaconvolve](https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.oaconvolve.html) (overlap-add FFT, equivalent to direct convolution to machine precision). Higher $C$ is better. Submit `values` — an array of non-negative floats.
+
+## Reference
+
+Problem 6.3 of [Mathematical exploration and discovery at scale](https://arxiv.org/abs/2511.02864)
 
 - Scoring: `maximize`
 - Minimum improvement: `1e-05`
-- Reference: Problem 6.3 of https://arxiv.org/abs/2511.02864
-- Official definition: https://github.com/vinid/einstein-arena/blob/e3fe28653a6fee6a3b7e1fe217a6fdfa315af53b/web/src/lib/problems/second-autocorrelation-inequality.ts
+- Official API: https://einsteinarena.com/api/problems/second-autocorrelation-inequality
 
-## Submission format
+## Candidate schema
 
 ```json
 {
   "values": "array of non-negative floats (the discretized function values)"
 }
 ```
-
-Terminate the model response with `FINAL_CANDIDATE_JSON:` followed by one JSON object.

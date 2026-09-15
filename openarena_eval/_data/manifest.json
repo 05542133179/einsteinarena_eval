@@ -1,20 +1,19 @@
 {
   "dataset": "openarena",
   "upstream_name": "EinsteinArena",
-  "snapshot_date": "2026-07-23",
+  "snapshot_date": "2026-09-15",
   "source_repository": "https://github.com/vinid/einstein-arena",
   "source_commit": "e3fe28653a6fee6a3b7e1fe217a6fdfa315af53b",
   "source_tree": "https://github.com/vinid/einstein-arena/tree/e3fe28653a6fee6a3b7e1fe217a6fdfa315af53b",
   "official_verifier_snapshot": {
-    "snapshot_id": "20260723T111033Z-e24cad2d7be5",
+    "snapshot_id": "20260915T064022Z-5330efed5dce",
     "base_url": "https://einsteinarena.com",
-    "fetched_at": "2026-07-23T11:10:24.752158+00:00",
-    "problem_count": 17,
-    "manifest_sha256": "9995e10e65fe80944b12d7e69c41d4233ee54d6557a4cf3066fcceae9b40cd03"
+    "fetched_at": "2026-09-15T06:39:47.622768+00:00",
+    "problem_count": 25
   },
   "license": "MIT",
   "selection_rule": "Problems listed under Optimization Problems on the EinsteinArena homepage on the snapshot date.",
-  "problem_count": 17,
+  "problem_count": 25,
   "open_problem_slugs": [
     "circle-packing",
     "circles-rectangle",
@@ -32,7 +31,15 @@
     "prime-number-theorem",
     "third-autocorrelation-inequality",
     "thomson-problem",
-    "uncertainty-principle"
+    "uncertainty-principle",
+    "hadamard-det-51",
+    "kakeya-needle-128",
+    "no-three-in-line-75",
+    "ring-loading-15",
+    "shannon-capacity-c7-5",
+    "sidon-45-set",
+    "sorting-network-16",
+    "spencer-discrepancy"
   ],
   "jsonl_sha256": "e7052bb788759cf1ac5db670c10447da63734701db28ff806568f7b5f6c86aaa",
   "problems": [
@@ -40,29 +47,23 @@
       "slug": "circle-packing",
       "title": "Circle Packing in a Square",
       "status": "active",
-      "homepage_status": "open",
-      "repo_hidden": true,
-      "source_url": "https://github.com/vinid/einstein-arena/blob/e3fe28653a6fee6a3b7e1fe217a6fdfa315af53b/web/src/lib/problems/circle-packing.ts",
-      "verifier_sha256": "2dee3fad3cfcf2729000abda43b1812eab13fd8808e16cdb278fbae1266b37ab",
+      "source_url": "https://einsteinarena.com/api/problems/circle-packing",
+      "verifier_sha256": "0fc4d3aa9b1018d69aad40fd8f50e4201b8e7ad2ca52e9a68fb739626391fa0e",
       "verifier_origin": "einsteinarena_public_problem_api"
     },
     {
       "slug": "circles-rectangle",
       "title": "Circles in a Rectangle (n = 21)",
       "status": "active",
-      "homepage_status": "open",
-      "repo_hidden": false,
-      "source_url": "https://github.com/vinid/einstein-arena/blob/e3fe28653a6fee6a3b7e1fe217a6fdfa315af53b/web/src/lib/problems/circles-rectangle.ts",
-      "verifier_sha256": "9e20fccc0bf0273ca3d1473687c54f254abd137191f39d5906eafcd7bdc1fdac",
+      "source_url": "https://einsteinarena.com/api/problems/circles-rectangle",
+      "verifier_sha256": "77cf0c63c000f1abc2d89aae18d4d7407599b8f683f304fe6cf9adeba966482d",
       "verifier_origin": "einsteinarena_public_problem_api"
     },
     {
       "slug": "difference-bases",
       "title": "Difference Bases",
       "status": "active",
-      "homepage_status": "open",
-      "repo_hidden": false,
-      "source_url": "https://github.com/vinid/einstein-arena/blob/e3fe28653a6fee6a3b7e1fe217a6fdfa315af53b/web/src/lib/problems/difference-bases.ts",
+      "source_url": "https://einsteinarena.com/api/problems/difference-bases",
       "verifier_sha256": "a7521e8a701ac31131932d2a732769d65426d329f4a933c4819516adacf2e585",
       "verifier_origin": "einsteinarena_public_problem_api"
     },
@@ -70,19 +71,15 @@
       "slug": "edges-vs-triangles",
       "title": "Edges vs Triangles (Minimal Triangle Density)",
       "status": "active",
-      "homepage_status": "open",
-      "repo_hidden": true,
-      "source_url": "https://github.com/vinid/einstein-arena/blob/e3fe28653a6fee6a3b7e1fe217a6fdfa315af53b/web/src/lib/problems/edges-vs-triangles.ts",
-      "verifier_sha256": "800ae2fbd2619d50de2177d49609289813bb6a2000b350f63e22820ad667052e",
+      "source_url": "https://einsteinarena.com/api/problems/edges-vs-triangles",
+      "verifier_sha256": "e504fc4b38a0b7fe3b27b5b5c7a5faceca36107a4d913283f61a644296cef2b4",
       "verifier_origin": "einsteinarena_public_problem_api"
     },
     {
       "slug": "erdos-min-overlap",
       "title": "Erdős Minimum Overlap (Upper Bound)",
       "status": "active",
-      "homepage_status": "open",
-      "repo_hidden": false,
-      "source_url": "https://github.com/vinid/einstein-arena/blob/e3fe28653a6fee6a3b7e1fe217a6fdfa315af53b/web/src/lib/problems/erdos-min-overlap.ts",
+      "source_url": "https://einsteinarena.com/api/problems/erdos-min-overlap",
       "verifier_sha256": "7c0e78d9dc40f27584ee2de01348fddcc6ff4a540908ddc902a4c6ef920920b0",
       "verifier_origin": "einsteinarena_public_problem_api"
     },
@@ -90,9 +87,7 @@
       "slug": "first-autocorrelation-inequality",
       "title": "First Autocorrelation Inequality (Upper Bound)",
       "status": "active",
-      "homepage_status": "open",
-      "repo_hidden": false,
-      "source_url": "https://github.com/vinid/einstein-arena/blob/e3fe28653a6fee6a3b7e1fe217a6fdfa315af53b/web/src/lib/problems/first-autocorrelation-inequality.ts",
+      "source_url": "https://einsteinarena.com/api/problems/first-autocorrelation-inequality",
       "verifier_sha256": "2964e97ca032cbef03e4c22eeddb0a4b622e8a52676b3fd059d6c71e914763a8",
       "verifier_origin": "einsteinarena_public_problem_api"
     },
@@ -100,9 +95,7 @@
       "slug": "flat-polynomials",
       "title": "Flat Polynomials (degree 69)",
       "status": "active",
-      "homepage_status": "open",
-      "repo_hidden": true,
-      "source_url": "https://github.com/vinid/einstein-arena/blob/e3fe28653a6fee6a3b7e1fe217a6fdfa315af53b/web/src/lib/problems/flat-polynomials.ts",
+      "source_url": "https://einsteinarena.com/api/problems/flat-polynomials",
       "verifier_sha256": "ff991bd84aec2b5b5d44f58a68dba00f961e01d517ec1de3225e0902f0f2fce2",
       "verifier_origin": "einsteinarena_public_problem_api"
     },
@@ -110,19 +103,15 @@
       "slug": "heilbronn-triangles",
       "title": "Heilbronn Problem for Triangles (n = 11)",
       "status": "active",
-      "homepage_status": "open",
-      "repo_hidden": false,
-      "source_url": "https://github.com/vinid/einstein-arena/blob/e3fe28653a6fee6a3b7e1fe217a6fdfa315af53b/web/src/lib/problems/heilbronn-triangles.ts",
-      "verifier_sha256": "6afecf9539c4e9038cd6188e4e77efec00c9905b688728ad58f69dbfedc2441d",
+      "source_url": "https://einsteinarena.com/api/problems/heilbronn-triangles",
+      "verifier_sha256": "1712f7838b13124429d55595e48e070ad953c0e07a75f988b6af6ceeb080f074",
       "verifier_origin": "einsteinarena_public_problem_api"
     },
     {
       "slug": "kissing-number-d11-605",
       "title": "Kissing Number in Dimension 11 (n=605)",
       "status": "active",
-      "homepage_status": "open",
-      "repo_hidden": false,
-      "source_url": "https://github.com/vinid/einstein-arena/blob/e3fe28653a6fee6a3b7e1fe217a6fdfa315af53b/web/src/lib/problems/kissing-number-d11-605.ts",
+      "source_url": "https://einsteinarena.com/api/problems/kissing-number-d11-605",
       "verifier_sha256": "9bb3804dc09dfaa3400beced301c2fd446123e765053dd0f4b04e5686191d4ef",
       "verifier_origin": "einsteinarena_public_problem_api"
     },
@@ -130,9 +119,7 @@
       "slug": "kissing-number-d12-842",
       "title": "Kissing Number in Dimension 12 (n=842)",
       "status": "active",
-      "homepage_status": "open",
-      "repo_hidden": false,
-      "source_url": "https://github.com/vinid/einstein-arena/blob/e3fe28653a6fee6a3b7e1fe217a6fdfa315af53b/web/src/lib/problems/kissing-number-d12-842.ts",
+      "source_url": "https://einsteinarena.com/api/problems/kissing-number-d12-842",
       "verifier_sha256": "54dc5d8c02a6370dfd24688da5c5745399437e4e5d3b9fdc6c523bb0112f88be",
       "verifier_origin": "einsteinarena_public_problem_api"
     },
@@ -140,9 +127,7 @@
       "slug": "min-distance-ratio-2d",
       "title": "Minimizing Max/Min Distance Ratio (2D, n=16)",
       "status": "active",
-      "homepage_status": "open",
-      "repo_hidden": false,
-      "source_url": "https://github.com/vinid/einstein-arena/blob/e3fe28653a6fee6a3b7e1fe217a6fdfa315af53b/web/src/lib/problems/min-distance-ratio-2d.ts",
+      "source_url": "https://einsteinarena.com/api/problems/min-distance-ratio-2d",
       "verifier_sha256": "2971cbb9e16752afe8d1d8067e6358d924b117ebeac0db41434ab19bfc8436ad",
       "verifier_origin": "einsteinarena_public_problem_api"
     },
@@ -150,9 +135,7 @@
       "slug": "second-autocorrelation-inequality",
       "title": "Second Autocorrelation Inequality (Lower Bound)",
       "status": "active",
-      "homepage_status": "open",
-      "repo_hidden": false,
-      "source_url": "https://github.com/vinid/einstein-arena/blob/e3fe28653a6fee6a3b7e1fe217a6fdfa315af53b/web/src/lib/problems/second-autocorrelation-inequality.ts",
+      "source_url": "https://einsteinarena.com/api/problems/second-autocorrelation-inequality",
       "verifier_sha256": "dc5ccffaa20ba6c112cab36ffe602c657372d192d8b486abd66b14bcad1ca768",
       "verifier_origin": "einsteinarena_public_problem_api"
     },
@@ -160,9 +143,7 @@
       "slug": "tammes-problem",
       "title": "Tammes Problem (n = 50)",
       "status": "active",
-      "homepage_status": "open",
-      "repo_hidden": true,
-      "source_url": "https://github.com/vinid/einstein-arena/blob/e3fe28653a6fee6a3b7e1fe217a6fdfa315af53b/web/src/lib/problems/tammes-problem.ts",
+      "source_url": "https://einsteinarena.com/api/problems/tammes-problem",
       "verifier_sha256": "b07f1a0bf0e1f31824d15e4179258b3ba5259af43cb22e0bf730bae8675c326c",
       "verifier_origin": "einsteinarena_public_problem_api"
     },
@@ -170,9 +151,7 @@
       "slug": "prime-number-theorem",
       "title": "The Prime Number Theorem",
       "status": "active",
-      "homepage_status": "open",
-      "repo_hidden": false,
-      "source_url": "https://github.com/vinid/einstein-arena/blob/e3fe28653a6fee6a3b7e1fe217a6fdfa315af53b/web/src/lib/problems/prime-number-theorem.ts",
+      "source_url": "https://einsteinarena.com/api/problems/prime-number-theorem",
       "verifier_sha256": "fd76a069b269a521d6ded609bd79185bf859df778283bebc37719dfd15b1ded6",
       "verifier_origin": "einsteinarena_public_problem_api"
     },
@@ -180,9 +159,7 @@
       "slug": "third-autocorrelation-inequality",
       "title": "Third Autocorrelation Inequality (Upper Bound)",
       "status": "active",
-      "homepage_status": "open",
-      "repo_hidden": false,
-      "source_url": "https://github.com/vinid/einstein-arena/blob/e3fe28653a6fee6a3b7e1fe217a6fdfa315af53b/web/src/lib/problems/third-autocorrelation-inequality.ts",
+      "source_url": "https://einsteinarena.com/api/problems/third-autocorrelation-inequality",
       "verifier_sha256": "b8288d5943d72032f1d2bcf5d8a3b3a00cfd428ae0347a26bfc53974ec7ebce9",
       "verifier_origin": "einsteinarena_public_problem_api"
     },
@@ -190,9 +167,7 @@
       "slug": "thomson-problem",
       "title": "Thomson Problem (n = 282)",
       "status": "active",
-      "homepage_status": "open",
-      "repo_hidden": true,
-      "source_url": "https://github.com/vinid/einstein-arena/blob/e3fe28653a6fee6a3b7e1fe217a6fdfa315af53b/web/src/lib/problems/thomson-problem.ts",
+      "source_url": "https://einsteinarena.com/api/problems/thomson-problem",
       "verifier_sha256": "4cdf454acc790c97f2cfcb1e62f44f571ff9f44f87566c341865bc1c234ba5af",
       "verifier_origin": "einsteinarena_public_problem_api"
     },
@@ -200,10 +175,72 @@
       "slug": "uncertainty-principle",
       "title": "Uncertainty Principle (Upper Bound)",
       "status": "active",
-      "homepage_status": "open",
-      "repo_hidden": false,
-      "source_url": "https://github.com/vinid/einstein-arena/blob/e3fe28653a6fee6a3b7e1fe217a6fdfa315af53b/web/src/lib/problems/uncertainty-principle.ts",
+      "source_url": "https://einsteinarena.com/api/problems/uncertainty-principle",
       "verifier_sha256": "8986d94fac865d4aea224c995b408574b9ac0f1c5d0a15dbd810ebc958457289",
+      "verifier_origin": "einsteinarena_public_problem_api"
+    },
+    {
+      "slug": "hadamard-det-51",
+      "title": "Hadamard Maximal Determinant (order 51)",
+      "status": "active",
+      "source_url": "https://einsteinarena.com/api/problems/hadamard-det-51",
+      "verifier_sha256": "39ab063431d610ab8e3135061b7339f2d6500dfa4971a45b6515fc9a0eb17eb2",
+      "verifier_origin": "einsteinarena_public_problem_api"
+    },
+    {
+      "slug": "kakeya-needle-128",
+      "title": "Discretized Kakeya Needle (n = 128)",
+      "status": "active",
+      "source_url": "https://einsteinarena.com/api/problems/kakeya-needle-128",
+      "verifier_sha256": "4d7e8ddd5a5044b3f0e66f745486538f5b76ddb6687e5fb536aca18b5c6cd098",
+      "verifier_origin": "einsteinarena_public_problem_api"
+    },
+    {
+      "slug": "no-three-in-line-75",
+      "title": "No-Three-in-Line (75 × 75 grid)",
+      "status": "active",
+      "source_url": "https://einsteinarena.com/api/problems/no-three-in-line-75",
+      "verifier_sha256": "9e016d7f19c40247ea1e5933aa7afb7ede60fd3acbb12629fe876a0c60178f5a",
+      "verifier_origin": "einsteinarena_public_problem_api"
+    },
+    {
+      "slug": "ring-loading-15",
+      "title": "Ring Loading Problem (15 pairs)",
+      "status": "active",
+      "source_url": "https://einsteinarena.com/api/problems/ring-loading-15",
+      "verifier_sha256": "a91b09ba472d9506a1d54603f977872f37505bdcc0e258b5dddd1ed99f148a57",
+      "verifier_origin": "einsteinarena_public_problem_api"
+    },
+    {
+      "slug": "shannon-capacity-c7-5",
+      "title": "Shannon Capacity of the 7-Cycle (Fifth Power)",
+      "status": "active",
+      "source_url": "https://einsteinarena.com/api/problems/shannon-capacity-c7-5",
+      "verifier_sha256": "a51854de5f55aec9be9d09b6bc527c304b299c3cd72c2caf345bf807ce3b5cbf",
+      "verifier_origin": "einsteinarena_public_problem_api"
+    },
+    {
+      "slug": "sidon-45-set",
+      "title": "Sidon Subsets of (4,5)-Sets",
+      "status": "active",
+      "source_url": "https://einsteinarena.com/api/problems/sidon-45-set",
+      "verifier_sha256": "bb50c84959e795bfbd94547aa51fcf761062c9c8eb426d32e843770b82cc424c",
+      "verifier_origin": "einsteinarena_public_problem_api"
+    },
+    {
+      "slug": "sorting-network-16",
+      "title": "Sorting Network (16 inputs)",
+      "status": "active",
+      "source_url": "https://einsteinarena.com/api/problems/sorting-network-16",
+      "verifier_sha256": "3e0f196983c07957fd2e0cb001300ff0b3a7bc793f29870dc7c26085e4f0f277",
+      "verifier_origin": "einsteinarena_public_problem_api"
+    },
+    {
+      "slug": "spencer-discrepancy",
+      "title": "Spencer Discrepancy Constant",
+      "status": "active",
+      "source_url": "https://einsteinarena.com/api/problems/spencer-discrepancy",
+      "verifier_sha256": "c14bb8b473cbed94f5605996a0082a1b998d398210d028e7fc4c1234f71db883",
       "verifier_origin": "einsteinarena_public_problem_api"
     }
   ],

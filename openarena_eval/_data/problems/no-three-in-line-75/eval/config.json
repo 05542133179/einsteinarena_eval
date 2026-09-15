@@ -1,0 +1,9 @@
+{
+  "adapter": "openarena",
+  "scoring": "maximize",
+  "min_improvement": 1.0,
+  "timeout_seconds": 120,
+  "memory_gb": 8,
+  "required_final_marker": "FINAL_CANDIDATE_JSON:",
+  "verifier_sha256": "9e016d7f19c40247ea1e5933aa7afb7ede60fd3acbb12629fe876a0c60178f5a"
+}
